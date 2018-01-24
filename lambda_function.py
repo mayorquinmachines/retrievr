@@ -1,9 +1,8 @@
 #!/usr/bin/env python
 import boto3
 from operator import itemgetter
-from config import *
 
-dynamodb = boto3.resource('dynamodb', region_name=REGION)
+dynamodb = boto3.resource('dynamodb', region_name="us-east-1")
 
 def build_speechlet_response(title, output, reprompt_text, should_end_session):
     return {
