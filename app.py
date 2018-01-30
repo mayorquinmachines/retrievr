@@ -5,7 +5,6 @@ import pexpect
 import pickle
 import pandas as pd
 import numpy as np
-import subprocess
 from collections import defaultdict, Counter
 from reverse_read import reverse_readline
 
@@ -15,7 +14,7 @@ ask = Ask(app, '/')
 
 @ask.intent('findkeys')
 def retrievr():
-    subprocess.call('/path/to/repo/sound_alarm.py', shell=True)
+    os.system("/path/to/repo/sound_alarm.py &")
     speech_text = guess_locate()
     return statement(speech_text)
 
@@ -53,4 +52,4 @@ def guess_locate():
 
 
 if __name__ == "__main__":
-    app.run(host='127.0.1.1', port='5000')
+    app.run(host='127.0.0.1', port='5000')
