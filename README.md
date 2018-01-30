@@ -1,14 +1,8 @@
 # Retrievr
 
-An Amazon Alexa application to find lost items using bluetooth.
-
-Notes:
-To set up lambda function, you must give the lambda_basic_execution role permissions to access dynamodb table in IAM.
-In the lambda function console, you must add Alexa Skills Kit trigger and configure it with the alexa skill's id.
-
+An Amazon Alexa application to find lost items using bluetooth. It uses an xgboost model to locate the most likely place
+the tagged keys were last left. The application runs using flask, flask-ask, and ngrok.
 
 TODO:
-* Continue working on bluebotnet.py file
-* Add mapping of space for room detection 
 * front-end interface to designate spaces
 
